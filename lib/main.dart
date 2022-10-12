@@ -1,21 +1,46 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(MaterialApp(
+  home: Home()
+));
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+
+class Home extends StatelessWidget {
+  const Home({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      // title: 'Welcome to Flutter',
-      home: Scaffold(
-        // appBar: AppBar(
-          // title: const Text('Welcome to Flutter'),
-        // ),
-        body: const Center(
-          child: Text('Hello World'),
-        ),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('hello world'),
+        centerTitle: true,
+        backgroundColor: Colors.red[600],
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            padding: EdgeInsets.all(20.0),
+            color: Colors.cyan,
+            child: Text('one'),
+          ),
+          Container(
+            padding: EdgeInsets.all(30.0),
+            color: Colors.pinkAccent,
+            child: Text('two'),
+          ),
+          Container(
+            padding: EdgeInsets.all(40.0),
+            color: Colors.amber,
+            child: Text('three'),
+          ),
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {  },
+        child: Text('click'),
+        backgroundColor: Colors.red[600],
       ),
     );
   }
